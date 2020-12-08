@@ -32,17 +32,17 @@ class BukuAdapter(val context: Context): RecyclerView.Adapter<BukuAdapter.BukuVi
     inner class BukuViewHolder(item: View): RecyclerView.ViewHolder(item){
 
         val txtJudulBuku: TextView = item.findViewById(R.id.tv_judul)
-        val txtNamaPengarang: TextView = item.findViewById(R.id.tv_pengarang)
-        val txtDeskripsi: TextView = item.findViewById(R.id.tv_deskripsi)
-        val txtHarga: TextView = item.findViewById(R.id.tv_harga)
-        val txtLokasi: TextView = item.findViewById(R.id.tv_lokasi)
+//        val txtNamaPengarang: TextView = item.findViewById(R.id.tv_pengarang)
+//        val txtDeskripsi: TextView = item.findViewById(R.id.tv_deskripsi)
+//        val txtHarga: TextView = item.findViewById(R.id.tv_harga)
+//        val txtLokasi: TextView = item.findViewById(R.id.tv_lokasi)
 
         fun binmodel (buku: Buku){
             txtJudulBuku.text = buku.getJudulBuku()
-            txtNamaPengarang.text = buku.getNamaPengerangBuku()
-            txtDeskripsi.text = buku.getDeskripsiBuku()
-            txtHarga.text = buku.getHarga()
-            txtLokasi.text = buku.getAlamatToko()
+//            txtNamaPengarang.text = buku.getNamaPengerangBuku()
+//            txtDeskripsi.text = buku.getDeskripsiBuku()
+//            txtHarga.text = buku.getHarga()
+//            txtLokasi.text = buku.getAlamatToko()
         }
     }
 }
