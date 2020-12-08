@@ -2,14 +2,60 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
+    android:layout_height="match_parent"
     android:layout_gravity="bottom"
     tools:context=".HomeFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc_buku"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:listitem="@layout/item_buku" />
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
+        android:background="#161616"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bolditalic"
+                android:text="Food"
+                android:textColor="#FF9800"
+                android:textSize="24dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:fontFamily="@font/roboto_bolditalic"
+                android:text="Menu"
+                android:textColor="#fff"
+                android:textSize="24dp"
+
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="text discription food menu"
+            android:textColor="#fff"
+            android:textSize="14dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_buku"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:listitem="@layout/item_buku" />
+    </LinearLayout>
+
 </FrameLayout>
