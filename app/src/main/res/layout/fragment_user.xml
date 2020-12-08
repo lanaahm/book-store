@@ -13,7 +13,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginBottom="48dp"
         android:fontFamily="@font/arbutus"
-        android:text="REGISTRASI"
+        android:text="REGISTRASI 1"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="normal"
