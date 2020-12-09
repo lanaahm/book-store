@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_weight="2"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/booklogin"
+        android:background="@drawable/loginbook"
         android:scaleType="centerCrop"/>
 
     <LinearLayout
@@ -22,7 +22,8 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/bgcard"
         android:orientation="vertical"
-        android:padding="40dp">
+        android:padding="40dp"
+        android:backgroundTint="#E3D9C5">
 
         <TextView
             android:layout_width="wrap_content"

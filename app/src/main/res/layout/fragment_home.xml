@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#EEEEEE"
+        android:background="#E0D7C2"
         android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -32,7 +32,9 @@
                     android:layout_height="280dp"
                     android:background="@drawable/custom_app_bar_background"
                     android:orientation="vertical"
-                    android:paddingHorizontal="20dp">
+                    android:paddingHorizontal="20dp"
+                    android:backgroundTint="#3C3A34">
+
 
                    <LinearLayout
                         android:layout_width="match_parent"
@@ -45,7 +47,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bolditalic"
                             android:text="Book"
-                            android:textColor="#FF9800"
+                            android:textColor="#F7DB4C"
                             android:textSize="30sp"
                             android:textStyle="bold"/>
 
@@ -55,7 +57,7 @@
                             android:layout_marginLeft="4dp"
                             android:fontFamily="@font/roboto_bolditalic"
                             android:text="Story"
-                            android:textColor="#fff"
+                            android:textColor="#F7DB4C"
                             android:textSize="30sp"
                             android:textStyle="bold"/>
 
@@ -66,7 +68,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Memudahkan anda dalam mencari buku"
-                        android:textColor="@color/lightText"
+                        android:textColor="#BEB6A6"
                         android:textSize="20sp"
 
                         ></TextView>
@@ -78,11 +80,12 @@
                         android:height="55dp"
                         android:background="@drawable/search_bar_background"
                         android:drawableEnd="@drawable/search_btn"
+                        android:backgroundTint="#E0D7C2"
                         android:hint="Cari buku mu"
                         android:paddingLeft="20dp"
                         android:paddingRight="5dp"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/white"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
                         android:elevation="10dp"
                         android:drawableRight="@drawable/search_btn"></EditText>
                 </LinearLayout>
@@ -96,7 +99,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_bolditalic"
             android:text="List Book"
-            android:textColor="#FF9800"
+            android:textColor="@color/black"
             android:textSize="26sp"
             android:textStyle="bold"
             android:paddingTop="15dp"

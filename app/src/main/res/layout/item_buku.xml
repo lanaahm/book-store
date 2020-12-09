@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:backgroundTint="#FFFBF1">
 
 <!--    <com.google.android.material.card.MaterialCardView-->
 <!--        android:id="@+id/card"-->
@@ -135,7 +136,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
                         android:text="Buku 1"
-                        android:textColor="#fdb501"
+                        android:textColor="#282622"
                         android:textSize="24dp" />
 
 
@@ -205,7 +206,7 @@
                                 android:layout_weight="1"
                                 android:fontFamily="@font/roboto_regular"
                                 android:text="Lokasi"
-                                android:textColor="#DF6A90B5"
+                                android:textColor="#282622"
                                 android:textSize="12sp" />
 
                         </LinearLayout>
@@ -216,7 +217,7 @@
                             android:layout_marginTop="6dp"
                             android:fontFamily="@font/roboto_regular"
                             android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-                            android:textColor="#DF6A90B5"
+                            android:textColor="#282622"
                             android:textSize="14dp" />
 
 
@@ -242,7 +243,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/booklogin" />
+                            android:src="@drawable/loginbook" />
                     </androidx.cardview.widget.CardView>
                 </RelativeLayout>
 
