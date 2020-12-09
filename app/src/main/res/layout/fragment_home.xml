@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="bottom"
     tools:context=".HomeFragment">
 
@@ -11,8 +12,35 @@
         android:layout_height="match_parent"
         android:paddingLeft="18dp"
         android:paddingRight="18dp"
-        android:background="#161616"
+        android:background="@color/white"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello"
+            android:textColor="#FF9800"
+            android:textSize="40dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="25dp">
+
+        </TextView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/outlinedTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search"
+            android:background="@color/white"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -23,9 +51,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bolditalic"
-                android:text="Food"
+                android:text="Book"
                 android:textColor="#FF9800"
                 android:textSize="24dp"
+                android:paddingTop="25dp"
 
                 />
 
@@ -35,7 +64,7 @@
                 android:layout_marginLeft="4dp"
                 android:fontFamily="@font/roboto_bolditalic"
                 android:text="Menu"
-                android:textColor="#fff"
+                android:textColor="#FF9800"
                 android:textSize="24dp"
 
                 />
@@ -56,6 +85,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             tools:listitem="@layout/item_buku" />
+
     </LinearLayout>
 
 </FrameLayout>
