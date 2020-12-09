@@ -20,6 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
+        android:background="#3C3A34"
+        android:backgroundTint="#FFFFFF"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navigation_menu" />
 
