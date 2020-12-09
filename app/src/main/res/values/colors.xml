@@ -18,4 +18,6 @@
     <color name="lightBlue">#e6f2ff</color>
     <color name="textBlue">#268eff</color>
     <color name="deepBlue">#425186</color>
+    <color name="item_color_active">#F7DB4C</color>
+    <color name="item_color_inactive">#FFFFFF</color>
 </resources>
