@@ -25,4 +25,8 @@
         <item name="itemTextColor">@color/bottom_nav_item_color</item>
         <item name="itemIconTint">@color/bottom_nav_item_color</item>
     </style>
+    <style name="MtButtonStyle"
+        parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@drawable/bg_btn</item>
+    </style>
 </resources>
