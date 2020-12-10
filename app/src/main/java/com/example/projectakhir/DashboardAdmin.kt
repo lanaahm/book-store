@@ -17,6 +17,11 @@ class DashboardAdmin : AppCompatActivity(), View.OnClickListener {
         findViewById<CardView>(R.id.toko).setOnClickListener(this)
     }
 
+    override fun onSaveInstanceState(state: Bundle) {
+        super.onSaveInstanceState(state)
+        setContentView(R.layout.activity_dashboard_admin)
+    }
+
     override fun onClick(v: View) {
         when (v.id) {
             R.id.buku -> { startActivity(Intent(this, ListBook::class.java)) }

@@ -6,7 +6,7 @@ class Buku {
     private var deskripsiBuku: String = ""
     private var hargaBuku: String = ""
     private var AlamatToko: String = ""
-
+    constructor():this("","","","",""){}
     constructor(judulBuku: String, namaPengerangBuku: String, deskripsiBuku: String, AlamatToko:String, hargaBuku: String){
         this.judulBuku = judulBuku
         this.namaPengerangBuku = namaPengerangBuku

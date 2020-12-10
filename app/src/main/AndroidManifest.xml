@@ -2,14 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.projectakhir">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:theme="@style/Theme.ProjectAkhir">
-        <activity android:name=".ListToko"></activity>
+        <activity android:name=".ListToko"/>
         <activity android:name=".ListBook" />
         <activity android:name=".DashboardAdmin">
             <intent-filter>
@@ -18,7 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SplashActivity" />
+        <activity android:name=".SplashActivity">
+        </activity>
         <activity android:name=".MainActivity" />
 
         <meta-data

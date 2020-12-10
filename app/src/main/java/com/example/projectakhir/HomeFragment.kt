@@ -34,16 +34,6 @@ class HomeFragment : Fragment() {
         addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
         addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
         addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
 
         bukuAdapter.setBuku(addBukuList)
     }

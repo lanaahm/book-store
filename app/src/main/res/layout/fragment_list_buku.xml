@@ -5,10 +5,26 @@
     android:layout_height="match_parent"
     tools:context=".ListBukuFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="#E0D7C2"
+        android:orientation="vertical">
 
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/smokyWhite">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_buku_admin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:listitem="@layout/item_buku_admin" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </LinearLayout>
 </FrameLayout>

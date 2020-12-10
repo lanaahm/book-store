@@ -1,6 +1,5 @@
 package com.example.projectakhir
 
-import android.R
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -14,9 +13,15 @@ import kotlinx.android.synthetic.main.activity_list_book.*
 
 class ListBook : AppCompatActivity(), View.OnClickListener {
 
+    var def: ColorStateList? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_book)
+
+        def = item2.textColors;
+        var fr = supportFragmentManager.beginTransaction()
+        fr.add(R.id.v_fragment_dadmin1, ListBukuFragment())
+        fr.commit()
 
         findViewById<ImageButton>(R.id.imageButton1).setOnClickListener(this)
         findViewById<TextView>(R.id.item1).setOnClickListener(this)
@@ -24,18 +29,22 @@ class ListBook : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        var selectFr: Fragment = HomeFragment()
+        var selectFr: Fragment = ListBukuFragment()
         when (v.id) {
             R.id.imageButton1 -> {
                 startActivity(Intent(this, DashboardAdmin::class.java))
             }
             R.id.item1 -> {
                 selectFr = ListBukuFragment()
-                findViewById<TextView>(R.id.select)
+                findViewById<TextView>(R.id.select).animate().x(v.x).duration = 100;
                 item1.setTextColor(Color.WHITE)
+                item2.setTextColor(def)
             }
             R.id.item2 -> {
-                selectFr = ListTokoFragment()
+                selectFr = CreateBukuFragment()
+                findViewById<TextView>(R.id.select).animate().x(v.x).duration = 100
+                item1.setTextColor(def)
+                item2.setTextColor(Color.WHITE)
             }
         }
 
@@ -43,4 +52,5 @@ class ListBook : AppCompatActivity(), View.OnClickListener {
         fr.replace(R.id.v_fragment_dadmin1, selectFr)
         fr.commit()
     }
+
 }
