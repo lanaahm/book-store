@@ -101,9 +101,11 @@
 <!--</LinearLayout>-->
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/databukuadmin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
+        android:clickable="true"
         android:layout_marginStart="18dp"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="8dp"

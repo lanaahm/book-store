@@ -9,9 +9,10 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import kotlinx.android.synthetic.main.activity_list_book.*
 
-class ListBook : AppCompatActivity(), View.OnClickListener {
+class ListBook : AppCompatActivity(), Communicator, View.OnClickListener {
 
     var def: ColorStateList? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,4 +54,17 @@ class ListBook : AppCompatActivity(), View.OnClickListener {
         fr.commit()
     }
 
+    override fun passDataCom(judulBuku: String) {
+        val bundle = Bundle()
+        bundle.putString("judul_buku",judulBuku)
+
+        val transaction = this.supportFragmentManager.beginTransaction()
+        val frag2 = CreateBukuFragment()
+        frag2.arguments = bundle
+
+        transaction.replace(R.id.v_fragment_dadmin1, frag2)
+        transaction.addToBackStack(null)
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+        transaction.commit()
+    }
 }

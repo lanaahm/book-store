@@ -1,13 +1,15 @@
 package com.example.projectakhir.model
 
 class Buku {
+    var id: String? = ""
     private var judulBuku: String = ""
     private var namaPengerangBuku: String = ""
     private var deskripsiBuku: String = ""
     private var hargaBuku: String = ""
     private var AlamatToko: String = ""
-    constructor():this("","","","",""){}
-    constructor(judulBuku: String, namaPengerangBuku: String, deskripsiBuku: String, AlamatToko:String, hargaBuku: String){
+    constructor():this("","","","","",""){}
+    constructor(id: String?, judulBuku: String, namaPengerangBuku: String, deskripsiBuku: String, AlamatToko:String, hargaBuku: String){
+        this.id = id
         this.judulBuku = judulBuku
         this.namaPengerangBuku = namaPengerangBuku
         this.deskripsiBuku = deskripsiBuku

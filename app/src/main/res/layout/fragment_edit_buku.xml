@@ -85,8 +85,19 @@
             android:background="@drawable/back_tabs"
             tools:backgroundTint="#3D3A35"
             android:textColor="#fff"
-            android:text="Simpan"
+            android:text="Edit Buku"
             android:textSize="16dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/simpan_buku2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/back_tabs"
+            android:text="Hapus Buku"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            tools:backgroundTint="#3D3A35" />
     </LinearLayout>
 
 </LinearLayout>

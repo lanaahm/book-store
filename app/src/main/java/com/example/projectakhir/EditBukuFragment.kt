@@ -3,7 +3,6 @@ package com.example.projectakhir
 import android.graphics.Color
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,8 +15,13 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.database.FirebaseDatabase
 
-class CreateBukuFragment : Fragment() {
-    var inputText: String? = ""
+class EditBukuFragment : Fragment() {
+    var id_buku: String? = ""
+    var judul_buku: String? = ""
+    var nama_pengerangBuku: String? = ""
+    var alamat_toko: String? = ""
+    var deskripsi_buku: String? = ""
+    var harga: String? = ""
 
     private lateinit var tf_namaBuku: TextInputLayout
     private lateinit var tf_namaPengarang: TextInputLayout
@@ -31,22 +35,37 @@ class CreateBukuFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView =  inflater.inflate(R.layout.fragment_create_buku, container, false)
+        val rootView =  inflater.inflate(R.layout.fragment_edit_buku, container, false)
 
         tf_namaBuku = rootView.findViewById(R.id.nama_buku)
         tf_namaPengarang = rootView.findViewById(R.id.pengarang)
         tf_tahunterbit = rootView.findViewById(R.id.thnterberit)
         tf_deskripsi = rootView.findViewById(R.id.keterangan)
 
-        inputText = arguments?.getString("input_txt")
+        id_buku = arguments?.getString("id_buku")
+        judul_buku = arguments?.getString("judul_buku")
+        nama_pengerangBuku = arguments?.getString("nama_pengerangBuku")
+        alamat_toko = arguments?.getString("alamat_toko")
+        deskripsi_buku = arguments?.getString("deskripsi_buku")
+        harga = arguments?.getString("harga")
 
-        Log.d("test", "${inputText}")
+        tf_namaBuku.editText?.setText(judul_buku)
+        tf_namaPengarang.editText?.setText(nama_pengerangBuku)
+        tf_tahunterbit.editText?.setText(alamat_toko)
+        tf_deskripsi.editText?.setText(deskripsi_buku)
 
         return rootView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        view.findViewById<MaterialButton>(R.id.simpan_buku2).setOnClickListener {
+            database.child(id_buku.toString()).removeValue()
+
+            var fr = fragmentManager?.beginTransaction()
+            fr?.replace(R.id.v_fragment_dadmin1, ListBukuFragment())
+            fr?.commit()
+        }
         view.findViewById<MaterialButton>(R.id.simpan_buku).setOnClickListener {
 
             val namaBuku = tf_namaBuku.editText?.text.toString()
@@ -59,10 +78,17 @@ class CreateBukuFragment : Fragment() {
                 TextUtils.isEmpty(tahunterbit) -> cekTf(tf_tahunterbit, ".")
                 TextUtils.isEmpty(deskripsi) -> cekTf(tf_deskripsi, ".")
                 else -> {
-                    val key = database.push().key
-                    database.child(key.toString()).setValue(
+//                    database.child(Buku.id!!).setValue(
+//                            Buku(
+//                                    namaBuku,
+//                                    namaPengarang,
+//                                    tahunterbit,
+//                                    deskripsi,
+//                                    "20000"
+//                            )
+                    database.child(id_buku.toString()).setValue(
                         Buku(
-                            key.toString(),
+                            id_buku,
                             namaBuku,
                             namaPengarang,
                             tahunterbit,
