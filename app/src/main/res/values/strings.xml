@@ -10,4 +10,5 @@
     <string name="supporting_text">Deskripsi</string>
     <string name="harga">Harga Buku</string>
     <string name="lokasi">Alamat Toko</string>
+    <string name="map_key" translatable="false"></string>
 </resources>
