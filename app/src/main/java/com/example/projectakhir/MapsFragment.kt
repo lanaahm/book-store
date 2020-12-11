@@ -60,8 +60,11 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+        val sydney = LatLng(-7.953191, 112.621411)
+        val sydney1 = LatLng(-7.966093, 112.622279)
+        mMap.addMarker(MarkerOptions().position(sydney).title("Rumah Maul"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        mMap.addMarker(MarkerOptions().position(sydney1).title("Mboh"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney1))
     }
 }
