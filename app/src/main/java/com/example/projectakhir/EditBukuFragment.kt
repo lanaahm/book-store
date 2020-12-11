@@ -78,14 +78,6 @@ class EditBukuFragment : Fragment() {
                 TextUtils.isEmpty(tahunterbit) -> cekTf(tf_tahunterbit, ".")
                 TextUtils.isEmpty(deskripsi) -> cekTf(tf_deskripsi, ".")
                 else -> {
-//                    database.child(Buku.id!!).setValue(
-//                            Buku(
-//                                    namaBuku,
-//                                    namaPengarang,
-//                                    tahunterbit,
-//                                    deskripsi,
-//                                    "20000"
-//                            )
                     database.child(id_buku.toString()).setValue(
                         Buku(
                             id_buku,

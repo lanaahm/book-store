@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E0D7C2">
+    android:background="#E0D7C2"
+    tools:context=".DetailBukuFrament">
 
     <ImageView
         android:id="@+id/imageView"
@@ -83,6 +84,30 @@
 
     </LinearLayout>
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+
+        <TextView
+            android:id="@+id/pengarangbuku"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Lokasi"
+            android:textColor="#282622"
+            android:textSize="12sp" />
+        android:src="@drawable/rate" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/deskripsibuku"
         android:layout_width="wrap_content"
@@ -94,6 +119,7 @@
 
 
     <TextView
+        android:id="@+id/deskripsi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"

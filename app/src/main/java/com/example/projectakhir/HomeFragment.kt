@@ -34,16 +34,6 @@ class HomeFragment : Fragment(), OnBukuItemClickListner {
     }
 
     private fun initView() {
-//        rc_buku.layoutManager = lm
-//        bukuAdapter = BukuAdapter(activity!!)
-//        rc_buku.adapter = bukuAdapter
-//
-//        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-//        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-//        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-//        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-//        addBukuList.add(Buku("Buku 1","Pengarang","Lorem ipsum dolar siamet", "Jl. Jalan","Rp. 20000"))
-
         rc_buku.layoutManager = lm
         bukuAdapter = BukuAdapter(context!!,this)
         rc_buku.adapter = bukuAdapter
@@ -68,13 +58,12 @@ class HomeFragment : Fragment(), OnBukuItemClickListner {
         bundle.putString("deskripsi_buku",item.getDeskripsiBuku())
         bundle.putString("harga",item.getHarga())
 
-//        val transaction = fragmentManager?.beginTransaction()
-//        val frag2 = EditBukuFragment()
-//        frag2.arguments = bundle
-//
-//        transaction?.replace(R.id.v_fragment_dadmin1, frag2)
-//        transaction?.addToBackStack(null)
-//        transaction?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-//        transaction?.commit()
+        val transaction = fragmentManager?.beginTransaction()
+        val frag2 = DetailBukuFrament()
+        frag2.arguments = bundle
+
+        transaction?.replace(R.id.v_fragment, frag2)
+        transaction?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+        transaction?.commit()
     }
 }
