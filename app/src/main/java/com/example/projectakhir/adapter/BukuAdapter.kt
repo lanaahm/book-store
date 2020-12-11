@@ -1,5 +1,6 @@
 package com.example.projectakhir.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -34,18 +35,16 @@ class BukuAdapter(
     }
     inner class BukuViewHolder(item: View): RecyclerView.ViewHolder(item){
 
-        val txtJudulBuku: TextView = item.findViewById(R.id.tv_judul)
-//        val txtNamaPengarang: TextView = item.findViewById(R.id.tv_pengarang)
-//        val txtDeskripsi: TextView = item.findViewById(R.id.tv_deskripsi)
-//        val txtHarga: TextView = item.findViewById(R.id.tv_harga)
-//        val txtLokasi: TextView = item.findViewById(R.id.tv_lokasi)
+        val txtJudulBuku: TextView = item.findViewById(R.id.tv_judul_home)
+        val txtDeskripsi: TextView = item.findViewById(R.id.deskrpsibukuhome)
+        val txtLokasi: TextView = item.findViewById(R.id.lokasi)
 
+        @SuppressLint("SetTextI18n")
         fun binmodel (buku: Buku, action:OnBukuItemClickListner){
-            txtJudulBuku.text = buku.getJudulBuku()
-//            txtNamaPengarang.text = buku.getNamaPengerangBuku()
-//            txtDeskripsi.text = buku.getDeskripsiBuku()
+            txtJudulBuku.text = "${buku.getJudulBuku()} - ${buku.getHarga()}"
+            txtDeskripsi.text = buku.getDeskripsiBuku()
 //            txtHarga.text = buku.getHarga()
-//            txtLokasi.text = buku.getAlamatToko()
+            txtLokasi.text = buku.getAlamatToko()
             itemView.findViewById<MaterialCardView>(R.id.databuk).setOnClickListener{
                 action.onItemClick(buku,adapterPosition)
             }
