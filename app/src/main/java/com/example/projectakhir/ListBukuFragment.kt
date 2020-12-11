@@ -1,16 +1,14 @@
 package com.example.projectakhir
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.projectakhir.adapter.BukuAdapterAdmin
-import com.example.projectakhir.adapter.OnCarItemClickListner
+import com.example.projectakhir.adapter.OnclickBukuAdmin
 import com.example.projectakhir.model.Buku
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -19,7 +17,7 @@ import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.fragment_list_buku.*
 
 
-class ListBukuFragment : Fragment(), OnCarItemClickListner {
+class ListBukuFragment : Fragment(), OnclickBukuAdmin {
     lateinit var bukuAdapter: BukuAdapterAdmin
     lateinit var comm: Communicator
 
@@ -59,11 +57,6 @@ class ListBukuFragment : Fragment(), OnCarItemClickListner {
     }
 
     override fun onItemClick(item: Buku, position: Int) {
-//        Toast.makeText(context, item.getJudulBuku() , Toast.LENGTH_SHORT).show()
-//        var fr = fragmentManager?.beginTransaction()
-//        comm.passDataCom(item.getJudulBuku().toString())
-//        fr?.replace(R.id.v_fragment_dadmin1, CreateBukuFragment())
-//        fr?.commit()
         val bundle = Bundle()
         bundle.putString("id_buku",item.id)
         bundle.putString("judul_buku",item.getJudulBuku())

@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                 selectFr = HomeFragment()
             }
             R.id.location -> {
-                selectFr = LocationFragment()
+                selectFr = MapsFragment()
             }
             R.id.user -> {
                 selectFr = UserFragment()

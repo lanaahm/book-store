@@ -8,8 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectakhir.R
 import com.example.projectakhir.model.Buku
+import com.google.android.material.card.MaterialCardView
 
-class BukuAdapter(val context: Context): RecyclerView.Adapter<BukuAdapter.BukuViewHolder>(){
+class BukuAdapter(
+    val context: Context,
+    var clickListner: OnBukuItemClickListner): RecyclerView.Adapter<BukuAdapter.BukuViewHolder>(){
 
     private val buku: MutableList<Buku> = mutableListOf()
 
@@ -18,7 +21,7 @@ class BukuAdapter(val context: Context): RecyclerView.Adapter<BukuAdapter.BukuVi
     }
 
     override fun onBindViewHolder(holder: BukuAdapter.BukuViewHolder, position: Int) {
-        holder.binmodel(buku[position])
+        holder.binmodel(buku[position], clickListner)
     }
 
     override fun getItemCount(): Int {
@@ -37,12 +40,18 @@ class BukuAdapter(val context: Context): RecyclerView.Adapter<BukuAdapter.BukuVi
 //        val txtHarga: TextView = item.findViewById(R.id.tv_harga)
 //        val txtLokasi: TextView = item.findViewById(R.id.tv_lokasi)
 
-        fun binmodel (buku: Buku){
+        fun binmodel (buku: Buku, action:OnBukuItemClickListner){
             txtJudulBuku.text = buku.getJudulBuku()
 //            txtNamaPengarang.text = buku.getNamaPengerangBuku()
 //            txtDeskripsi.text = buku.getDeskripsiBuku()
 //            txtHarga.text = buku.getHarga()
 //            txtLokasi.text = buku.getAlamatToko()
+            itemView.findViewById<MaterialCardView>(R.id.databuk).setOnClickListener{
+                action.onItemClick(buku,adapterPosition)
+            }
         }
     }
+}
+interface OnBukuItemClickListner{
+    fun onItemClick(item: Buku, position: Int)
 }

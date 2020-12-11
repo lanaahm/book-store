@@ -12,7 +12,7 @@ import com.google.android.material.card.MaterialCardView
 
 class BukuAdapterAdmin(
         val context: Context,
-        var clickListner: OnCarItemClickListner
+        var clickListner: OnclickBukuAdmin
     ):
         RecyclerView.Adapter<BukuAdapterAdmin.BukuViewHolder>(){
 
@@ -43,7 +43,7 @@ class BukuAdapterAdmin(
         val txtDeskripsi: TextView = item.findViewById(R.id.tv_deskripsi)
         val txtLokasi: TextView = item.findViewById(R.id.tv_lokasi)
 
-        fun binmodel (buku: Buku, action:OnCarItemClickListner){
+        fun binmodel (buku: Buku, action:OnclickBukuAdmin){
             txtJudulBuku.text = "${buku.getJudulBuku()} - ${buku.getHarga()}"
             txtNamaPengarang.text = buku.getNamaPengerangBuku()
             txtDeskripsi.text = buku.getDeskripsiBuku()
@@ -55,6 +55,6 @@ class BukuAdapterAdmin(
 
     }
 }
-interface OnCarItemClickListner{
+interface OnclickBukuAdmin{
     fun onItemClick(item: Buku, position: Int)
 }
