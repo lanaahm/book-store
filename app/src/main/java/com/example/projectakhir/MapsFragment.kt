@@ -38,7 +38,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mapDef, 16.0f));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mapDef, 12.0f));
         // Add a marker in Sydney and move the camera
         val toko1 = LatLng(-7.952039, 112.622573)
         val toko2 = LatLng(-7.938587, 112.627078)

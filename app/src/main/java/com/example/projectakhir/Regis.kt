@@ -78,7 +78,7 @@ class Regis : Fragment() {
             .addOnCompleteListener {
                 if (it.isSuccessful){
                     var fr = fragmentManager?.beginTransaction()
-                    fr?.add(R.id.v_fragment_dadmin1, UserFragment())
+                    fr?.add(R.id.v_fragment, UserFragment())
                     fr?.commit()
                 }
                 else{
