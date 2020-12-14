@@ -21,8 +21,9 @@ class CreateBukuFragment : Fragment() {
 
     private lateinit var tf_namaBuku: TextInputLayout
     private lateinit var tf_namaPengarang: TextInputLayout
-    private lateinit var tf_tahunterbit: TextInputLayout
+    private lateinit var tf_lokasi: TextInputLayout
     private lateinit var tf_deskripsi: TextInputLayout
+    private lateinit var tf_harga: TextInputLayout
 
     private val database= FirebaseDatabase.getInstance().getReference("dataBuku")
 
@@ -35,8 +36,9 @@ class CreateBukuFragment : Fragment() {
 
         tf_namaBuku = rootView.findViewById(R.id.nama_buku)
         tf_namaPengarang = rootView.findViewById(R.id.pengarang)
-        tf_tahunterbit = rootView.findViewById(R.id.thnterberit)
         tf_deskripsi = rootView.findViewById(R.id.keterangan)
+        tf_lokasi = rootView.findViewById(R.id.lokasi)
+        tf_harga = rootView.findViewById(R.id.harga)
 
         inputText = arguments?.getString("input_txt")
 
@@ -51,23 +53,25 @@ class CreateBukuFragment : Fragment() {
 
             val namaBuku = tf_namaBuku.editText?.text.toString()
             val namaPengarang = tf_namaPengarang.editText?.text.toString()
-            val tahunterbit = tf_tahunterbit.editText?.text.toString()
             val deskripsi = tf_deskripsi.editText?.text.toString()
+            val lokasi = tf_lokasi.editText?.text.toString()
+            val harga = tf_harga.editText?.text.toString()
             when {
                 TextUtils.isEmpty(namaBuku) -> cekTf(tf_namaBuku, ".")
                 TextUtils.isEmpty(namaPengarang) -> cekTf(tf_namaPengarang, ".")
-                TextUtils.isEmpty(tahunterbit) -> cekTf(tf_tahunterbit, ".")
+                TextUtils.isEmpty(lokasi) -> cekTf(tf_lokasi, ".")
                 TextUtils.isEmpty(deskripsi) -> cekTf(tf_deskripsi, ".")
+                TextUtils.isEmpty(harga) -> cekTf(tf_harga, ".")
                 else -> {
                     val key = database.push().key
                     database.child(key.toString()).setValue(
                         Buku(
                             key.toString(),
-                            namaBuku,
-                            namaPengarang,
-                            tahunterbit,
-                            deskripsi,
-                            "20000"
+                                namaBuku,
+                                namaPengarang,
+                                deskripsi,
+                                lokasi,
+                                harga
                         )
                     ).addOnSuccessListener(OnSuccessListener {
                         cleanTf()
@@ -96,8 +100,9 @@ class CreateBukuFragment : Fragment() {
     private fun cleanTf(){
         tf_namaBuku.editText!!.text = null
         tf_namaPengarang.editText!!.text = null
-        tf_tahunterbit.editText!!.text = null
+        tf_lokasi.editText!!.text = null
         tf_deskripsi.editText!!.text = null
+        tf_harga.editText!!.text = null
     }
 
 }

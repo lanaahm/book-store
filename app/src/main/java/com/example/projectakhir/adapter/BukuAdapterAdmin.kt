@@ -42,12 +42,14 @@ class BukuAdapterAdmin(
         val txtNamaPengarang: TextView = item.findViewById(R.id.tv_pengarang)
         val txtDeskripsi: TextView = item.findViewById(R.id.tv_deskripsi)
         val txtLokasi: TextView = item.findViewById(R.id.tv_lokasi)
+        val txtHarga: TextView = item.findViewById(R.id.tv_harga)
 
         fun binmodel (buku: Buku, action:OnclickBukuAdmin){
-            txtJudulBuku.text = "${buku.getJudulBuku()} - ${buku.getHarga()}"
+            txtJudulBuku.text = buku.getJudulBuku()
             txtNamaPengarang.text = buku.getNamaPengerangBuku()
             txtDeskripsi.text = buku.getDeskripsiBuku()
             txtLokasi.text = buku.getAlamatToko()
+            txtHarga.text = buku.getHarga()
             itemView.findViewById<MaterialCardView>(R.id.databukuadmin).setOnClickListener{
                 action.onItemClick(buku,adapterPosition)
             }

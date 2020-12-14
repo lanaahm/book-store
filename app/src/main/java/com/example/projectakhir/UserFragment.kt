@@ -28,35 +28,12 @@ class UserFragment : Fragment() {
             fr?.replace(R.id.v_fragment, Regis())
             fr?.commit()
         }
-
         auth = FirebaseAuth.getInstance()
-
-
         login.setOnClickListener {
             val Emaillog = emailLog.text.toString().trim()
             val Passwordlog = paslog.text.toString().trim()
-
-//            if (Emaillog.isEmpty()){
-//                emailLog.error = "Email harus diisi"
-//                return@setOnClickListener
-//            }
-//
-//            if (!Patterns.EMAIL_ADDRESS.matcher(Emaillog).matches()){
-//                emailLog.error = "Email tidak valid"
-//                emailLog.requestFocus()
-//                return@setOnClickListener
-//            }
-//
-//            if (Passwordlog.isEmpty() || paslog.length() < 6){
-//                paslog.error = "Password harus lebih dari 6 karakter"
-//                paslog.requestFocus()
-//                return@setOnClickListener
-//            }
-
             loginAdmin(Emaillog, Passwordlog)
         }
-
-
     }
 
     private fun loginAdmin(Emaillog: String, Passwordlog: String) {

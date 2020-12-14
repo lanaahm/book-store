@@ -19,14 +19,15 @@ class EditBukuFragment : Fragment() {
     var id_buku: String? = ""
     var judul_buku: String? = ""
     var nama_pengerangBuku: String? = ""
-    var alamat_toko: String? = ""
+    var lokasi: String? = ""
     var deskripsi_buku: String? = ""
     var harga: String? = ""
 
     private lateinit var tf_namaBuku: TextInputLayout
     private lateinit var tf_namaPengarang: TextInputLayout
-    private lateinit var tf_tahunterbit: TextInputLayout
+    private lateinit var tf_lokasi: TextInputLayout
     private lateinit var tf_deskripsi: TextInputLayout
+    private lateinit var tf_harga: TextInputLayout
 
     private val database= FirebaseDatabase.getInstance().getReference("dataBuku")
 
@@ -39,20 +40,22 @@ class EditBukuFragment : Fragment() {
 
         tf_namaBuku = rootView.findViewById(R.id.nama_buku)
         tf_namaPengarang = rootView.findViewById(R.id.pengarang)
-        tf_tahunterbit = rootView.findViewById(R.id.thnterberit)
+        tf_lokasi = rootView.findViewById(R.id.lokasi)
         tf_deskripsi = rootView.findViewById(R.id.keterangan)
+        tf_harga = rootView.findViewById(R.id.harga)
 
         id_buku = arguments?.getString("id_buku")
         judul_buku = arguments?.getString("judul_buku")
         nama_pengerangBuku = arguments?.getString("nama_pengerangBuku")
-        alamat_toko = arguments?.getString("alamat_toko")
+        lokasi = arguments?.getString("alamat_toko")
         deskripsi_buku = arguments?.getString("deskripsi_buku")
         harga = arguments?.getString("harga")
 
         tf_namaBuku.editText?.setText(judul_buku)
         tf_namaPengarang.editText?.setText(nama_pengerangBuku)
-        tf_tahunterbit.editText?.setText(alamat_toko)
+        tf_lokasi.editText?.setText(lokasi)
         tf_deskripsi.editText?.setText(deskripsi_buku)
+        tf_harga.editText?.setText(harga)
 
         return rootView
     }
@@ -70,22 +73,24 @@ class EditBukuFragment : Fragment() {
 
             val namaBuku = tf_namaBuku.editText?.text.toString()
             val namaPengarang = tf_namaPengarang.editText?.text.toString()
-            val tahunterbit = tf_tahunterbit.editText?.text.toString()
+            val lokasi = tf_lokasi.editText?.text.toString()
             val deskripsi = tf_deskripsi.editText?.text.toString()
+            val harga = tf_harga.editText?.text.toString()
             when {
                 TextUtils.isEmpty(namaBuku) -> cekTf(tf_namaBuku, ".")
                 TextUtils.isEmpty(namaPengarang) -> cekTf(tf_namaPengarang, ".")
-                TextUtils.isEmpty(tahunterbit) -> cekTf(tf_tahunterbit, ".")
+                TextUtils.isEmpty(lokasi) -> cekTf(tf_lokasi, ".")
                 TextUtils.isEmpty(deskripsi) -> cekTf(tf_deskripsi, ".")
+                TextUtils.isEmpty(harga) -> cekTf(tf_harga, ".")
                 else -> {
                     database.child(id_buku.toString()).setValue(
                         Buku(
                             id_buku,
                             namaBuku,
                             namaPengarang,
-                            tahunterbit,
                             deskripsi,
-                            "20000"
+                            lokasi,
+                            harga
                         )
                     ).addOnSuccessListener(OnSuccessListener {
                         cleanTf()
@@ -114,8 +119,9 @@ class EditBukuFragment : Fragment() {
     private fun cleanTf(){
         tf_namaBuku.editText!!.text = null
         tf_namaPengarang.editText!!.text = null
-        tf_tahunterbit.editText!!.text = null
+        tf_lokasi.editText!!.text = null
         tf_deskripsi.editText!!.text = null
+        tf_harga.editText!!.text = null
     }
 
 }

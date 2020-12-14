@@ -35,7 +35,7 @@
             android:id="@+id/pengarang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nama Buku"
+            android:hint="pengarang"
             android:paddingVertical="8dp"
             app:startIconDrawable="@drawable/ic_book__1_">
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -47,10 +47,10 @@
 
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/thnterberit"
+            android:id="@+id/lokasi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nama Buku"
+            android:hint="lokasi"
             android:paddingVertical="8dp"
             app:startIconDrawable="@drawable/ic_book__1_">
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -65,7 +65,7 @@
             android:id="@+id/keterangan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nama Buku"
+            android:hint="Deskripsi"
             android:paddingVertical="8dp"
             app:startIconDrawable="@drawable/ic_book__1_">
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -76,7 +76,21 @@
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/harga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Harga"
+            android:paddingVertical="8dp"
+            app:startIconDrawable="@drawable/ic_book__1_">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.button.MaterialButton
             android:id="@+id/simpan_buku"
             android:layout_width="match_parent"

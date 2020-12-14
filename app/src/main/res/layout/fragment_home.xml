@@ -56,7 +56,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="4dp"
                             android:fontFamily="@font/roboto_bolditalic"
-                            android:text="Story"
+                            android:text="Store"
                             android:textColor="#FFFFFF"
                             android:textSize="30sp"
                             android:textStyle="bold" />

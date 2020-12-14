@@ -30,7 +30,6 @@ class HomeFragment : Fragment(), OnBukuItemClickListner {
 
     private val database= FirebaseDatabase.getInstance().getReference("dataBuku")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
         val root_view = inflater.inflate(R.layout.fragment_home, container, false)
         search_buku = root_view.findViewById(R.id.search_buku)
         return root_view
@@ -86,7 +85,6 @@ class HomeFragment : Fragment(), OnBukuItemClickListner {
     override fun onItemClick(item: Buku, position: Int) {
         val bundle = Bundle()
         bundle.putString("id_buku",item.id)
-        bundle.putString("judul_buku",item.getJudulBuku())
         bundle.putString("judul_buku",item.getJudulBuku())
         bundle.putString("nama_pengerangBuku",item.getNamaPengerangBuku())
         bundle.putString("alamat_toko",item.getAlamatToko())

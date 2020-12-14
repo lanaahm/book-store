@@ -17,7 +17,6 @@ class DashboardAdmin : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_dashboard_admin)
 
         findViewById<CardView>(R.id.buku).setOnClickListener(this)
-        findViewById<CardView>(R.id.toko).setOnClickListener(this)
 
         auth = FirebaseAuth.getInstance()
 
@@ -38,7 +37,7 @@ class DashboardAdmin : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         when (v.id) {
             R.id.buku -> { startActivity(Intent(this, ListBook::class.java)) }
-            R.id.toko -> { startActivity(Intent(this, ListToko::class.java)) }
+
         }
     }
 }

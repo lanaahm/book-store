@@ -7,11 +7,27 @@
     android:background="#E0D7C2"
     tools:context=".DetailBukuFrament">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daftar Buku"
+            android:textColor="#2B2B2B"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="30sp"/>
+
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="305dp"
-        app:srcCompat="@drawable/buku1"
+        app:srcCompat="@drawable/loginbook"
         android:layout_marginBottom="20dp"/>
 
     <LinearLayout
@@ -37,6 +53,7 @@
         android:layout_marginBottom="10dp">
 
         <ImageView
+
             android:id="@+id/lokbuk"
             android:layout_width="14dp"
             android:layout_height="14dp"
@@ -45,7 +62,7 @@
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
-            android:id="@+id/lokasibuku"
+            android:id="@+id/lokasi"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
@@ -89,13 +106,51 @@
 
     </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp">
 
-    <LinearLayout
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_weight="0"
+                app:srcCompat="@drawable/ic_money"
+                tools:ignore="VectorDrawableCompat" />
+
+            <TextView
+                android:id="@+id/harga"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Harga"
+                android:textColor="#282622"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:orientation="horizontal"
         android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/ic_person"
+            tools:ignore="VectorDrawableCompat" />
 
 
         <TextView
@@ -132,5 +187,8 @@
         android:textColor="#282622"
         android:textSize="14dp" />
     </LinearLayout>
+
+
+
 
 </LinearLayout>

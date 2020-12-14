@@ -21,11 +21,7 @@ class MainActivity : AppCompatActivity() {
         var fr = supportFragmentManager.beginTransaction()
         fr.add(R.id.v_fragment, HomeFragment())
         fr.commit()
-
-
     }
-
-
     private val onBottomNavListener = BottomNavigationView.OnNavigationItemSelectedListener { i ->
         var selectFr: Fragment = HomeFragment()
 
@@ -40,7 +36,6 @@ class MainActivity : AppCompatActivity() {
                 selectFr = UserFragment()
             }
         }
-
         var fr = supportFragmentManager.beginTransaction()
         fr.replace(R.id.v_fragment, selectFr)
         fr.commit()

@@ -38,13 +38,16 @@ class BukuAdapter(
         val txtJudulBuku: TextView = item.findViewById(R.id.tv_judul_home)
         val txtDeskripsi: TextView = item.findViewById(R.id.deskrpsibukuhome)
         val txtLokasi: TextView = item.findViewById(R.id.lokasi)
+        val txtHarga: TextView = item.findViewById(R.id.harga)
+//        val txtPengarang: TextView = item.findViewById(R.id.pengarangbuku)
 
         @SuppressLint("SetTextI18n")
         fun binmodel (buku: Buku, action:OnBukuItemClickListner){
-            txtJudulBuku.text = "${buku.getJudulBuku()} - ${buku.getHarga()}"
+            txtJudulBuku.text = buku.getJudulBuku()
             txtDeskripsi.text = buku.getDeskripsiBuku()
-//            txtHarga.text = buku.getHarga()
+            txtHarga.text = buku.getHarga()
             txtLokasi.text = buku.getAlamatToko()
+//            txtPengarang.text = buku.getNamaPengerangBuku()
             itemView.findViewById<MaterialCardView>(R.id.databuk).setOnClickListener{
                 action.onItemClick(buku,adapterPosition)
             }
